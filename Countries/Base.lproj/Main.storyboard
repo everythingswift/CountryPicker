@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isz-IJ-NL1">
+                                <rect key="frame" x="0.0" y="59" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Q0A-MH-LjG"/>
+                                </constraints>
+                                <state key="normal" title="Select Country"/>
+                                <connections>
+                                    <action selector="countryBtnTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="e7D-gj-Nvn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Not Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ate-OC-VcT">
+                                <rect key="frame" x="0.0" y="128" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1F6-KH-153"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ate-OC-VcT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLZ-fZ-VwZ"/>
+                            <constraint firstItem="Isz-IJ-NL1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="eMm-1i-BUs"/>
+                            <constraint firstItem="Isz-IJ-NL1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="gUG-Fu-1hy"/>
+                            <constraint firstItem="ate-OC-VcT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iVZ-ND-gZf"/>
+                            <constraint firstItem="Isz-IJ-NL1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="sKu-rD-Geo"/>
+                            <constraint firstItem="ate-OC-VcT" firstAttribute="top" secondItem="Isz-IJ-NL1" secondAttribute="bottom" constant="39" id="vI5-Ia-avv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countrySelectedLbl" destination="ate-OC-VcT" id="4pO-Jz-Umi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Country List View Controller-->
+        <scene sceneID="0ap-PH-axh">
+            <objects>
+                <viewController storyboardIdentifier="COUNTRY_LIST_VC" id="eMl-11-Mk4" customClass="CountryListViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hbJ-Xh-zVp"/>
+                        <viewControllerLayoutGuide type="bottom" id="7LS-CN-UfM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2qi-Ls-XrM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sVU-LZ-xaj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="COUNTRY_ITEM_CELL" id="KmO-2R-QcO">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KmO-2R-QcO" id="63g-4g-3Fl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eMl-11-Mk4" id="vpx-AC-K54"/>
+                                    <outlet property="delegate" destination="eMl-11-Mk4" id="dZN-Pl-OqD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sVU-LZ-xaj" firstAttribute="centerX" secondItem="2qi-Ls-XrM" secondAttribute="centerX" id="Hdo-6v-aEX"/>
+                            <constraint firstItem="sVU-LZ-xaj" firstAttribute="height" secondItem="2qi-Ls-XrM" secondAttribute="height" id="N4S-fw-eVG"/>
+                            <constraint firstItem="sVU-LZ-xaj" firstAttribute="width" secondItem="2qi-Ls-XrM" secondAttribute="width" id="PeH-g8-dQa"/>
+                            <constraint firstItem="sVU-LZ-xaj" firstAttribute="centerY" secondItem="2qi-Ls-XrM" secondAttribute="centerY" id="mrY-ee-4et"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqh-yx-I6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="35"/>
+        </scene>
+    </scenes>
+</document>
